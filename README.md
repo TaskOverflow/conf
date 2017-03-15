@@ -1,18 +1,18 @@
 # TaskOverflow
+   Grails project at ISIMA by Benoit Garçon
 
 ## Configuration server
 
-This repository simulate a configuration server. If you want to test different configurations, you just need to change the configuration server url in the client.
+This repository simulate a configuration server. If you want to test different configurations, you just need to switch between ok/ko in the different files in data/ folder.
 
-You just have to choose a constant in app.js.
+## Run the application
 
-``` javascript
-.constant("CONF_SERVER_URL", "https://raw.githubusercontent.com/TaskOverflow/conf/master/allok/")       // if you want to test with all features
-//.constant("CONF_SERVER_URL", "https://raw.githubusercontent.com/TaskOverflow/conf/master/alldown/")   // if you want to test without features
-```
+By default the server will be reachable on [http://localhost:666](http://localhost:666).
 
-### allok
-Contain a valid state for all features.
-
-### alldown
-Contain a invalid state for all features.
+   ```
+   grails war
+   java "-Dgrails.env=dev" -jar .\build\libs\conf-0.1.war
+   ```
+   
+## Health check
+Health check is available at [http://localhost:666/health](http://localhost:666/health).
